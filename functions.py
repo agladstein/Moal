@@ -1,3 +1,6 @@
+import numpy as np
+
+
 def convert_mins_to_decimal(time):
     """
     Convert minutes in time to decimal notation.
@@ -11,3 +14,13 @@ def convert_mins_to_decimal(time):
     percent = int((mins/60)*100)
     decimal = float('{}.{}'.format(str(hrs),str(percent)))
     return(decimal)
+
+
+def fit_exp(t, r):
+    """
+    Fit data to an exponential distribution
+    
+    Args: t (float): observed time to complete task
+    Args: r (float): rate parameter, how fast a task is finished
+    """
+    return r * np.exp(-r * t) #this is an exponential distribution, but it could be anything
